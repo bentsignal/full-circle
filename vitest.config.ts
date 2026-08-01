@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     fullCircle({
       failOnDiagnostics: false,
-      scanRoots: ["examples"],
+      scanRoots: ["test/fixtures/components"],
     }),
   ],
   esbuild: {

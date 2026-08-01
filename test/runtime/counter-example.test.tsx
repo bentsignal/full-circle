@@ -2,8 +2,8 @@ import { useState } from "react";
 import { act, render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 
-import type { CounterState } from "../../examples/counter";
-import { Counter, CounterExample } from "../../examples/counter";
+import type { CounterState } from "../fixtures/components/counter";
+import { Counter, CounterExample } from "../fixtures/components/counter";
 
 describe("CounterExample", () => {
   test("connects provider state to the created component", () => {

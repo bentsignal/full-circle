@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { App } from "../../examples/readme";
+import { App } from "../fixtures/components/readme";
 
 describe("README example", () => {
   it("renders and updates through a provided store", () => {

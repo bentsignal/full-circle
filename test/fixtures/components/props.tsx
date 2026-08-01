@@ -1,4 +1,4 @@
-import { createComponent, createStore, defineProps, useStore } from "../src";
+import { createComponent, createStore, defineProps, useStore } from "../../../src";
 
 export const GreetingStyle = createStore<{
   salutation: string;

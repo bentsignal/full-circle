@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 
-import { FullyProvidedDashboard } from "../../examples/multiple-stores";
+import { FullyProvidedDashboard } from "../fixtures/components/multiple-stores";
 
 describe("multiple store providers", () => {
   test("updates three independent stores across nested provider boundaries", () => {

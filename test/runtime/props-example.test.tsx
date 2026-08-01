@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 
-import { PropsExample } from "../../examples/props";
+import { PropsExample } from "../fixtures/components/props";
 
 describe("props example", () => {
   test("derives UI state from component props and store dependencies", () => {

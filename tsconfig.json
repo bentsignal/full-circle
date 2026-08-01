@@ -18,14 +18,12 @@
     "target": "ES2022",
     "types": ["node", "vitest/globals"]
   },
-  "include": [
-    "examples",
-    "src",
-    "test",
-    "tooling",
-    "eslint.config.ts",
-    "tsdown.config.ts",
-    "vitest.config.ts"
-  ],
-  "exclude": ["dist", "node_modules", "src/compiler/typescript-plugin.cts", "test/fixtures"]
+  "include": ["src", "test", "tooling", "eslint.config.ts", "tsdown.config.ts", "vitest.config.ts"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/compiler/typescript-plugin.cts",
+    "test/fixtures/language-service",
+    "test/fixtures/packed-consumer"
+  ]
 }

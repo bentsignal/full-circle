@@ -7,8 +7,11 @@ import { createFullCircleLanguageService } from "../../src/compiler";
 
 const repositoryRoot = path.resolve(import.meta.dirname, "../..");
 const repositoryConfigFileName = path.join(repositoryRoot, "tsconfig.json");
-const counterFileName = path.join(repositoryRoot, "examples/counter.tsx");
-const multipleStoresFileName = path.join(repositoryRoot, "examples/multiple-stores.tsx");
+const counterFileName = path.join(repositoryRoot, "test/fixtures/components/counter.tsx");
+const multipleStoresFileName = path.join(
+  repositoryRoot,
+  "test/fixtures/components/multiple-stores.tsx",
+);
 const fixtureRoot = path.join(repositoryRoot, "test/fixtures/language-service");
 const fixtureConfigFileName = path.join(fixtureRoot, "tsconfig.json");
 const fixtureCounterFileName = path.join(fixtureRoot, "counter.tsx");

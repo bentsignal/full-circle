@@ -3,7 +3,6 @@ import { defineConfig } from "tsdown";
 export default defineConfig({
   dts: true,
   entry: {
-    check: "src/compiler/check.ts",
     "compiler/index": "src/compiler/index.ts",
     "compiler/vite": "src/compiler/vite.ts",
     index: "src/index.ts",

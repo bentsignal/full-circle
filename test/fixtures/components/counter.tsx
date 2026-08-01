@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 
-import { createComponent, createStore, useStore } from "../src";
+import { createComponent, createStore, useStore } from "../../../src";
 
 export interface CounterState {
   readonly count: number;

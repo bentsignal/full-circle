@@ -1,0 +1,38 @@
+{
+  "name": "example",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "build": "vite build",
+    "check": "tsc --noEmit && vite build",
+    "dev": "vite dev --port 3000",
+    "generate-routes": "tsr generate",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "latest",
+    "@tanstack/react-start": "latest",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "use-sync-external-store": "^1.6.0"
+  },
+  "devDependencies": {
+    "@tanstack/router-cli": "^1.132.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "typescript": "^6.0.2",
+    "vite": "7.1.12"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lightningcss"
+    ]
+  }
+}

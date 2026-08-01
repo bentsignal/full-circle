@@ -123,11 +123,17 @@ type StoreDependencies = readonly {
   };
 }[];
 
-export type ResolvedDependencies<Dependencies extends StoreDependencies> = {
-  readonly [Dependency in Dependencies[number] as DependencyKey<Dependency>]: ReadableStore<
-    DependencyState<Dependency>
-  >;
-};
+export type ResolvedDependencies<Dependencies extends StoreDependencies> =
+  string extends DependencyKey<Dependencies[number]>
+    ? UnanalyzedDependencies
+    : {
+        readonly [Dependency in Dependencies[number] as DependencyKey<Dependency>]: ReadableStore<
+          DependencyState<Dependency>
+        >;
+      };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- Ordinary tsc cannot infer dependency keys from variable names. The editor and Vite transforms replace this fallback with exact store types.
+type UnanalyzedDependencies = any;
 
 type DependencyKey<Dependency> = Dependency extends {
   readonly [StoreTypeId]: {

@@ -1,14 +1,18 @@
 import type { Effect } from "effect";
 
-import type { ComponentEffect, StoreRequirement } from "../src";
-import type { ThemeState, ViewerState, WorkspaceState } from "./multiple-stores";
+import type { ComponentEffect, StoreRequirement } from "../../src";
+import type {
+  ThemeState,
+  ViewerState,
+  WorkspaceState,
+} from "../fixtures/components/multiple-stores";
 import {
   FullyProvidedDashboard,
   IdentityBadge,
   UnprovidedDashboard,
   ViewerAndThemeProvidedDashboard,
   ViewerProvidedDashboard,
-} from "./multiple-stores";
+} from "../fixtures/components/multiple-stores";
 
 type Equal<Left, Right> =
   (<Value>() => Value extends Left ? 1 : 2) extends <Value>() => Value extends Right ? 1 : 2

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { createComponent, createStore, toStandaloneComponent, useStore } from "../src";
+import { createComponent, createStore, toStandaloneComponent, useStore } from "../../../src";
 
 export const Counter = createStore<{
   count: number;

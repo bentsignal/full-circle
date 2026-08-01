@@ -1,8 +1,13 @@
 import type { Effect } from "effect";
 
-import type { ComponentEffect, StoreRequirement } from "../src";
-import type { CounterState } from "./counter";
-import { CounterButton, CounterExample, CounterPanel, CounterRow } from "./counter";
+import type { ComponentEffect, StoreRequirement } from "../../src";
+import type { CounterState } from "../fixtures/components/counter";
+import {
+  CounterButton,
+  CounterExample,
+  CounterPanel,
+  CounterRow,
+} from "../fixtures/components/counter";
 
 type Equal<Left, Right> =
   (<Value>() => Value extends Left ? 1 : 2) extends <Value>() => Value extends Right ? 1 : 2

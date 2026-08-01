@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { createComponent, createStore, useStore } from "../src";
+import { createComponent, createStore, useStore } from "../../../src";
 
 export interface ViewerState {
   readonly name: string;

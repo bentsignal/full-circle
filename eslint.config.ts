@@ -9,7 +9,14 @@ import { strictSyntaxRules } from "./tooling/eslint/strict-syntax";
 
 export default defineConfig(
   {
-    ignores: ["dist/**", "node_modules/**"],
+    ignores: [
+      "dist/**",
+      "example/.output/**",
+      "example/.tanstack/**",
+      "example/dist/**",
+      "example/node_modules/**",
+      "node_modules/**",
+    ],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,tsx,mts,cts}"],
@@ -30,7 +37,7 @@ export default defineConfig(
   },
   reactHooks.configs.flat["recommended-latest"],
   {
-    files: ["examples/**/*.tsx", "src/**/*.tsx", "test/**/*.tsx"],
+    files: ["example/**/*.tsx", "src/**/*.tsx", "test/**/*.tsx"],
     processor: fullCircleProcessor,
   },
 );
