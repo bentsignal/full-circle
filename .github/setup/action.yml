@@ -15,3 +15,6 @@ runs:
 
     - shell: bash
       run: bun install --frozen-lockfile
+
+    - shell: bash
+      run: bun install --cwd example --frozen-lockfile
