@@ -1,6 +1,6 @@
 {
   "name": "full-circle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Readable React components with type-safe dependencies.",
   "keywords": [
     "components",
