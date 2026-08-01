@@ -1,6 +1,13 @@
 <h1 align="center">Full Circle</h1>
 <p align="center">Readable React components with type-safe dependencies.</p>
 
+## Why?
+
+React was introduced with a simple idea: UI is a function of state. Full Circle
+returns to that idea directly. A component's `ui` field is literally a function
+of the value returned by `state`, while dependencies remain visible to the type
+system.
+
 Full Circle gives React components a small, consistent shape:
 
 1. `deps` declares the stores a component needs.
@@ -139,14 +146,3 @@ Use Full Circle's checker in place of `tsc --noEmit`:
   }
 }
 ```
-
-## Why Full Circle?
-
-React was introduced with a simple idea: UI is a function of state. Full Circle
-returns to that idea directly. A component's `ui` field is literally a function
-of the value returned by `state`, while dependencies remain visible to the type
-system.
-
-## License
-
-MIT
