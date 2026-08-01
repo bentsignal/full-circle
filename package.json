@@ -20,7 +20,7 @@
     "url": "git+https://github.com/bentsignal/full-circle.git"
   },
   "bin": {
-    "full-circle-tsc": "./dist/check.js"
+    "full-circle-tsc": "dist/check.js"
   },
   "files": [
     "dist"
