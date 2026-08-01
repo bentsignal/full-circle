@@ -1,0 +1,127 @@
+{
+  "name": "full-circle",
+  "version": "0.1.0",
+  "description": "Readable React components with type-safe dependencies.",
+  "keywords": [
+    "components",
+    "dependency injection",
+    "react",
+    "react compiler",
+    "state management",
+    "typescript"
+  ],
+  "homepage": "https://github.com/bentsignal/full-circle#readme",
+  "bugs": {
+    "url": "https://github.com/bentsignal/full-circle/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bentsignal/full-circle.git"
+  },
+  "bin": {
+    "full-circle-tsc": "./dist/check.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./compiler": {
+      "types": "./dist/compiler/index.d.ts",
+      "import": "./dist/compiler/index.js"
+    },
+    "./vite": {
+      "types": "./dist/compiler/vite.d.ts",
+      "import": "./dist/compiler/vite.js"
+    },
+    "./typescript": {
+      "types": "./dist/typescript.d.cts",
+      "default": "./dist/typescript.cjs"
+    },
+    "./virtual": {
+      "types": "./dist/virtual.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown && bun run build:typescript-plugin && cp src/compiler/typescript-plugin.d.cts dist/typescript.d.cts && cp src/compiler/virtual.d.ts dist/virtual.d.ts",
+    "build:typescript-plugin": "esbuild src/compiler/typescript-plugin.cts --bundle --platform=node --format=cjs --external:typescript --outfile=dist/typescript.cjs",
+    "check": "bun run format && bun run lint && bun run typecheck && bun run test:run && bun run build && bun run pack:check",
+    "dev": "tsdown --watch",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt .",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix && oxfmt .",
+    "pack:check": "publint && attw --pack --profile esm-only --entrypoints . ./compiler ./vite",
+    "prepublishOnly": "bun run check",
+    "release": "changeset publish",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "bun src/compiler/check.ts --project tsconfig.json"
+  },
+  "dependencies": {
+    "use-sync-external-store": "^1.6.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@babel/core": "^7.29.0",
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
+    "@eslint/js": "^9.38.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^22.18.12",
+    "@types/react": "~19.2.14",
+    "@types/react-dom": "~19.2.3",
+    "@types/use-sync-external-store": "^1.5.0",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "effect": "4.0.0-beta.102",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.38.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "jiti": "^2.6.1",
+    "jsdom": "^27.4.0",
+    "oxfmt": "^0.20.0",
+    "publint": "^0.3.16",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "tsdown": "^0.18.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.46.2",
+    "vite": "7.1.12",
+    "vitest": "^4.0.17"
+  },
+  "peerDependencies": {
+    "effect": "^4.0.0-beta.102",
+    "react": "^19.0.0",
+    "typescript": ">=5.7.0 <7",
+    "vite": ">=6.0.0 <8"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "packageManager": "bun@1.2.20"
+}

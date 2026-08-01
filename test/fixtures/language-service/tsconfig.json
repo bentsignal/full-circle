@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "full-circle": ["../../../src/index.ts"]
+    }
+  },
+  "include": ["*.tsx", "../../../src"],
+  "exclude": []
+}
