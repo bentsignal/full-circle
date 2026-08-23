@@ -56,8 +56,9 @@
   "scripts": {
     "build": "tsdown && bun run build:typescript-plugin && cp src/compiler/typescript-plugin.d.cts dist/typescript.d.cts && cp src/compiler/virtual.d.ts dist/virtual.d.ts",
     "build:typescript-plugin": "esbuild src/compiler/typescript-plugin.cts --bundle --platform=node --format=cjs --external:typescript --outfile=dist/typescript.cjs",
-    "check": "bun run format && bun run lint && bun run typecheck && bun run test:run && bun run build && bun run example:check && bun run pack:check",
+    "check": "bun run format && bun run docs:check && bun run lint && bun run typecheck && bun run test:run && bun run build && bun run example:check && bun run pack:check",
     "dev": "tsdown --watch",
+    "docs:check": "bun tooling/check-docs.ts",
     "example:build": "bun run --cwd example build",
     "example:check": "bun run --cwd example check",
     "example:dev": "bun run --cwd example dev",
